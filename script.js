@@ -41,9 +41,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
   function drawSquare(x, y, color, char) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, cellSize, cellSize);
-    ctx.font = '14px nokia';
+    ctx.font = '15px nokia';
     ctx.fillStyle = char === '/' ? 'orange' : '#5d7950';
-    ctx.fillText(char === '/' ? '//' : char, x+10, y+20);
+    ctx.fillText(char === '/' ? '//' : char, x+10, y+21);
   }
 
   // giving the food object its coordinates
@@ -99,6 +99,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // loops through the snake array and draws each element
   function drawSnake() {
+    console.log(snake)
     for (i = 0; i < snake.length; i++) {
       let char = i < SNAKE_NAME.length ? SNAKE_NAME[i] : '';
       drawSquare(snake[i].x, snake[i].y, snakeColor, char);
