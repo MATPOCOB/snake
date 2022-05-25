@@ -104,7 +104,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // loops through the snake array and draws each element
   function drawSnake() {
-    console.log(snake[0])
     for (i = 0; i < snake.length; i++) {
       let char = i < SNAKE_NAME.length ? SNAKE_NAME[i] : '';
       drawSquare(snake[i].x, snake[i].y, snakeColor, char);
