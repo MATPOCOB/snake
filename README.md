@@ -1,6 +1,3 @@
 # Snake
-https://matpocob.github.io/snake/
 
-# Work names
-- CoBra 
-- Mamba
+https://matpocob.github.io/snake/
