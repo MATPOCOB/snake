@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     fps = 200,
     snake = [],
     snakeLength = 10,
-    cellSize = 20,
+    cellSize = 30,
     snakeColor = '#273122',
     loop = undefined,
     foodColor = '#ff3636',
@@ -41,9 +41,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
   function drawSquare(x, y, color, char) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, cellSize, cellSize);
-    ctx.font = '10px nokia';
+    ctx.font = '14px nokia';
     ctx.fillStyle = char === '/' ? 'orange' : '#5d7950';
-    ctx.fillText(char === '/' ? '//' : char, x+5, y+15);
+    ctx.fillText(char === '/' ? '//' : char, x+10, y+20);
   }
 
   // giving the food object its coordinates
