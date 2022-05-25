@@ -20,13 +20,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     cellSize = 30,
     snakeColor = '#273122',
     loop = undefined,
-    foodColor = '#ff3636',
     foodX = [],
     foodY = [],
     gameStared = false,
     paused = false,
     demo = false
-    food = {
+    bugPosition = {
       x: 0,
       y: 0
     },
@@ -53,11 +52,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // giving the food object its coordinates
   function createFood() {
-    food.x = foodX[Math.floor(Math.random() * foodX.length)]; // random x position from array
-    food.y = foodY[Math.floor(Math.random() * foodY.length)]; // random y position from array
+    bugPosition.x = foodX[Math.floor(Math.random() * foodX.length)]; // random x position from array
+    bugPosition.y = foodY[Math.floor(Math.random() * foodY.length)]; // random y position from array
     // looping through the snake and checking if there is a collision
     for (i = 0; i < snake.length; i++) {
-      if (checkCollision(food.x, food.y, snake[i].x, snake[i].y)) {
+      if (checkCollision(bugPosition.x, bugPosition.y, snake[i].x, snake[i].y)) {
         createFood();
       }
     }
@@ -68,7 +67,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const foodImage = new Image();
     foodImage.src = './bug.svg';
 
-    ctx.drawImage(foodImage, food.x, food.y);
+    ctx.drawImage(foodImage, bugPosition.x, bugPosition.y);
   }
 
   // setting the colors for the canvas. color1 - the background, color2 - the line color
@@ -196,7 +195,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     }
     // checking for collision with food
-    if (checkCollision(head.x, head.y, food.x, food.y)) {
+    if (checkCollision(head.x, head.y, bugPosition.x, bugPosition.y)) {
       snake[snake.length] = {x: head.x, y: head.y};
       createFood();
       drawFood();
