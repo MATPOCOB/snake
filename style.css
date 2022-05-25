@@ -12,11 +12,11 @@ body {
 .canvas-container {
   position: absolute;
   z-index: 1;
-  top: 210px;
+  top: 205px;
   left: 50%;
   transform: translateX(-42%);
-  padding: 20px 20px 16px;
-  background: url("./rock.svg") top left;
+  padding: 10px 10px 6px;
+  background-color: #111;
 }
 
 .canvas-container canvas {
