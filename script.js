@@ -15,10 +15,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
     snakeLength = 10,
     cellSize = 20,
     snakeColor = '#212C1D',
+    loop = undefined,
     foodColor = '#ff3636',
     foodX = [],
     foodY = [],
     gameStared = false,
+    paused = false,
     food = {
       x: 0,
       y: 0
@@ -182,10 +184,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
       score += 10;
     }
 
-    document.onkeydown = function (evt) {
+    document.addEventListener('keydown', function (evt) {
       evt = evt || window.event;
       changeDirection(evt.keyCode)
-    };
+    });
 
     ctx.beginPath();
     setBackground('#5d7950', '#5d7950');
@@ -209,11 +211,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  document.onkeydown = function (evt) {
-    if (evt.keyCode === 32 && !gameStared) {
-      gameStared = true
-      document.querySelector(".canvas-container").classList.remove("d-none");
-      newGame();
+  document.addEventListener('keydown', function (evt) {
+    if (evt.keyCode === 32) {
+
+      if (!gameStared) {
+        gameStared = true
+        document.querySelector(".canvas-container").classList.remove("d-none");
+        newGame();
+        return
+      }
+
+      if (paused) {
+        paused = false
+        game()
+        loop = setInterval(game, fps);
+      } else {
+        clearInterval(loop)
+        paused = true
+      }
     }
-  };
+  });
 })
