@@ -50,3 +50,11 @@ body {
 .d-none {
   display: none;
 }
+
+.score {
+  color: #273122;
+  font-size: 30px;
+  right: -75px;
+  top: 30px;
+  position: absolute;
+}

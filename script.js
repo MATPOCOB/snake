@@ -181,7 +181,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       snake[snake.length] = {x: head.x, y: head.y};
       createFood();
       drawFood();
-      score += 10;
+      score += 1;
     }
 
     document.addEventListener('keydown', function (evt) {
