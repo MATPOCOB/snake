@@ -266,12 +266,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     }
     if (evt.keyCode === 68) {
-      // if (paused) {
-        demo = true
-        snake = fullSnake()
-        setBackground()
-        drawSnake()
-      // }
+        if (demo) {
+          demo = false
+        } else {
+          demo = true
+          snake = fullSnake()
+          setBackground()
+          drawSnake()
+        }
     }
   });
 
