@@ -25,6 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     foodY = [],
     gameStared = false,
     paused = false,
+    demo = false
     food = {
       x: 0,
       y: 0
@@ -103,6 +104,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // loops through the snake array and draws each element
   function drawSnake() {
+    console.log(snake[0])
     for (i = 0; i < snake.length; i++) {
       let char = i < SNAKE_NAME.length ? SNAKE_NAME[i] : '';
       drawSquare(snake[i].x, snake[i].y, snakeColor, char);
@@ -158,6 +160,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // main game loop
   function game() {
     var head = snake[0];
+    if (demo) {
+      if (snake[0].x <= cellSize && direction === 'left') {
+        directionQueue = 'down'
+      }
+      if (snake[0].y >= 13*cellSize && direction === 'down') {
+        directionQueue = 'right'
+      }
+      if (snake[0].x >= 14*cellSize && direction === 'right') {
+        directionQueue = 'up'
+      }
+      if (snake[0].y <= cellSize && direction === 'up') {
+        directionQueue = 'left'
+      }
+    }
     // checking for wall collisions
     if (head.x < 0 || head.x > canvas.width - cellSize || head.y < 0 || head.y > canvas.height - cellSize) {
       setBackground();
@@ -232,10 +248,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
     return snake;
   }
 
-
   document.addEventListener('keydown', function (evt) {
     if (evt.keyCode === 32) {
-
+      demo = false
       if (!gameStared) {
         gameStared = true
         new Audio('./music.mp3').play();
@@ -251,11 +266,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     }
     if (evt.keyCode === 68) {
-      if (paused) {
+      // if (paused) {
+        demo = true
         snake = fullSnake()
         setBackground()
         drawSnake()
-      }
+      // }
     }
   });
 
