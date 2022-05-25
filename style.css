@@ -1,9 +1,37 @@
+body {
+  overflow: hidden;
+}
+
 .container {
   width: 1000px;
   margin: auto;
   text-align: center;
+  z-index: 2;
 }
 
 canvas {
-  border: 1px solid #ccc;
+  border: 1px solid #111;
+  position: absolute;
+  z-index: 1;
+  top: 220px;
+  left: 50%;
+  transform: translateX(-42%);
+}
+
+.nokia {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 600px;
+  top: 0;
+  z-index: -1;
+  transition: transform 1s ease-in-out;
+}
+
+.nokia-fullscreen {
+  transform: scale(4) translateX(-10%) translateY(115px);
+}
+
+.d-none {
+  display: none;
 }
