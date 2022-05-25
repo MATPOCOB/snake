@@ -15,6 +15,7 @@ body {
   margin: auto;
   text-align: center;
   z-index: 2;
+  position: relative;
 }
 
 .canvas-container {
@@ -25,6 +26,7 @@ body {
   transform: translateX(-42%);
   padding: 10px 14px 6px 10px;
   background-color: #273122;
+  filter: blur(1px);
 }
 
 .canvas-container canvas {
@@ -57,4 +59,28 @@ body {
   right: -75px;
   top: 30px;
   position: absolute;
+}
+
+.hit-space {
+  color: #273122;
+  position: absolute;
+  font-size: 83px;
+  left: 54%;
+  top: 545px;
+  transform: translateX(-50%);
+}
+
+.blink {
+  animation: blink-animation .8s steps(5, start) infinite;
+  -webkit-animation: blink-animation .8s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }

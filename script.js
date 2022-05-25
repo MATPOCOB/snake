@@ -4,6 +4,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector(".nokia").classList.add("nokia-fullscreen")
   }, 1000)
 
+  setTimeout(() => {
+    document.querySelector(".hit-space").classList.remove("d-none")
+  }, 2000)
+
   var canvas = document.getElementById('canvas');
 
   var ctx = canvas.getContext('2d'),
@@ -234,18 +238,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
       if (!gameStared) {
         gameStared = true
+        new Audio('./music.mp3').play();
         document.querySelector(".canvas-container").classList.remove("d-none");
         newGame();
         return
       }
 
       if (paused) {
-        paused = false
-        game()
-        loop = setInterval(game, fps);
+        resume()
       } else {
-        clearInterval(loop)
-        paused = true
+        pause()
       }
     }
     if (evt.keyCode === 68) {
@@ -256,4 +258,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     }
   });
+
+  function pause() {
+    clearInterval(loop)
+    paused = true
+  }
+
+  function resume() {
+    paused = false
+    game()
+    loop = setInterval(game, fps);
+  }
 })
