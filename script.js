@@ -99,7 +99,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // loops through the snake array and draws each element
   function drawSnake() {
-    console.log(snake)
     for (i = 0; i < snake.length; i++) {
       let char = i < SNAKE_NAME.length ? SNAKE_NAME[i] : '';
       drawSquare(snake[i].x, snake[i].y, snakeColor, char);
@@ -212,6 +211,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
+  function fullSnake() {
+    snake = [];
+    for (let i = 0; i < 13; i++) {
+      snake.push({x: (i+1) * cellSize, y: cellSize});
+    }
+    for (let i = 0; i < 13; i++) {
+      snake.push({x: 13 * cellSize+cellSize, y: (i+1)*cellSize});
+    }
+    for (let i = 12; i >= 0; i--) {
+      snake.push({x: (i+1) * cellSize, y: 13*cellSize});
+    }
+    for (let i = 8; i >= 0; i--) {
+      snake.push({x: cellSize, y: (i+4)*cellSize});
+    }
+    return snake;
+  }
+
+
   document.addEventListener('keydown', function (evt) {
     if (evt.keyCode === 32) {
 
@@ -229,6 +246,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
       } else {
         clearInterval(loop)
         paused = true
+      }
+    }
+    if (evt.keyCode === 68) {
+      if (paused) {
+        snake = fullSnake()
+        setBackground()
+        drawSnake()
       }
     }
   });
