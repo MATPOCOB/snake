@@ -10,7 +10,7 @@ body {
 }
 
 canvas {
-  border: 1px solid #111;
+  border: 1px solid #454755;
   position: absolute;
   z-index: 1;
   top: 220px;
