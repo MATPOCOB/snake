@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'nokia';
+  src: url('./nokiafc22.ttf') format('truetype');
+}
+
 body {
   overflow: hidden;
+  font-family: 'nokia', sans-serif;
+  color:#fff;
+  font-size:12px;
 }
 
 .container {
