@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     directionQueue = '',
     fps = 200,
     snake = [],
-    snakeLength = 9,
+    snakeLength = 10,
     cellSize = 20,
     snakeColor = '#111',
     foodColor = '#ff3636',
@@ -90,8 +90,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // same positions
   function createSnake() {
     snake = [];
-    for (var i = snakeLength; i > 0; i--) {
-      k = i * cellSize;
+    for (let i = 0; i < snakeLength; i++) {
+      k = i * cellSize+cellSize*10;
       snake.push({x: k, y: 0});
     }
   }
@@ -162,7 +162,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       drawSnake();
       createFood();
       drawFood();
-      directionQueue = 'right';
+      directionQueue = 'left';
       score = 0;
     }
     // checking for colisions with snake's body
@@ -173,7 +173,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         drawSnake();
         createFood();
         drawFood();
-        directionQueue = 'right';
+        directionQueue = 'left';
         score = 0;
       }
     }
@@ -199,8 +199,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function newGame() {
-    direction = 'right'; // initial direction
-    directionQueue = 'right';
+    direction = 'left'; // initial direction
+    directionQueue = 'left';
     ctx.beginPath();
     createSnake();
     createFood();
