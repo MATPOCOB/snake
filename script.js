@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }, 1000)
 
   setTimeout(() => {
-    document.querySelector("canvas").classList.remove("d-none")
+    document.querySelector(".canvas-container").classList.remove("d-none")
   }, 2500)
 
   var canvas = document.getElementById('canvas');
@@ -62,7 +62,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   // drawing food on the canvas
   function drawFood() {
     const foodImage = new Image();
-    foodImage.src = './food.png';
+    foodImage.src = './bug.svg';
 
     ctx.drawImage(foodImage, food.x, food.y);
   }
