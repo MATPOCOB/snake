@@ -43,8 +43,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, cellSize, cellSize);
     ctx.font = '10px Arial';
-    ctx.fillStyle = 'white';
-    ctx.fillText(char, x+5, y+15);
+    ctx.fillStyle = char === '/' ? 'orange' : 'white';
+    ctx.fillText(char === '/' ? '//' : char, x+5, y+15);
   }
 
   // giving the food object its coordinates
@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  const SNAKE_NAME = 'CODEBORNE';
+  const SNAKE_NAME = '/CODEBORNE';
 
   // loops through the snake array and draws each element
   function drawSnake() {
