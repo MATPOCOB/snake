@@ -16,7 +16,7 @@ body {
   left: 50%;
   transform: translateX(-42%);
   padding: 10px 14px 6px 10px;
-  background-color: #212C1D;
+  background-color: #273122;
 }
 
 .canvas-container canvas {
