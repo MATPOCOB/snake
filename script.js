@@ -96,7 +96,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  const SNAKE_NAME = '/CODEBORNE';
+  const SNAKE_NAME = '/CODEBORNE/MIRA/OLHA/KÄTLIN/BATMAN/MAKSIM/KIRILL';
 
   // loops through the snake array and draws each element
   function drawSnake() {
