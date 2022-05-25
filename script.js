@@ -2,11 +2,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   setTimeout(() => {
     document.querySelector(".nokia").classList.add("nokia-fullscreen")
-  }, 1000)
+  }, 2000)
 
   setTimeout(() => {
     document.querySelector(".canvas-container").classList.remove("d-none")
-  }, 2500)
+  }, 3000)
 
   var canvas = document.getElementById('canvas');
 
@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     snake = [],
     snakeLength = 10,
     cellSize = 20,
-    snakeColor = '#111',
+    snakeColor = '#212C1D',
     foodColor = '#ff3636',
     foodX = [],
     foodY = [],
@@ -185,9 +185,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
       score += 10;
     }
 
-    canvas.onkeydown = function (evt) {
+    document.onkeydown = function (evt) {
       evt = evt || window.event;
-      changeDirection(evt.keyCode);
+      changeDirection(evt.keyCode)
     };
 
     ctx.beginPath();
