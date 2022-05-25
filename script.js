@@ -1,15 +1,24 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+
+  setTimeout(() => {
+    document.querySelector(".nokia").classList.add("nokia-fullscreen")
+  }, 1000)
+
+  setTimeout(() => {
+    document.querySelector("canvas").classList.remove("d-none")
+  }, 2500)
+
   var canvas = document.getElementById('canvas');
 
   var ctx = canvas.getContext('2d'),
     scoreIs = document.getElementById('score'),
     direction = '',
     directionQueue = '',
-    fps = 70,
+    fps = 120,
     snake = [],
     snakeLength = 9,
     cellSize = 20,
-    snakeColor = '#3498db',
+    snakeColor = '#111',
     foodColor = '#ff3636',
     foodX = [],
     foodY = [],
@@ -182,7 +191,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     };
 
     ctx.beginPath();
-    setBackground('#fff', '#eee');
+    setBackground('#5d7950', '#5d7950');
     scoreIs.innerHTML = score;
     drawSnake();
     drawFood();
