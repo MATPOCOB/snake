@@ -1,4 +1,6 @@
-# snake
+# Snake
+https://matpocob.github.io/snake/
 
-Work names: CoBra, Mamba
-Hosted on: https://matpocob.github.io/snake/
+# Work names
+- CoBra 
+- Mamba
