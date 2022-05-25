@@ -223,13 +223,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
 
       if (paused) {
-        paused = false
-        game()
-        loop = setInterval(game, fps);
+        resume()
       } else {
-        clearInterval(loop)
-        paused = true
+        pause()
       }
     }
   });
+
+  function pause() {
+    clearInterval(loop)
+    paused = true
+  }
+
+  function resume() {
+    paused = false
+    game()
+    loop = setInterval(game, fps);
+  }
 })
