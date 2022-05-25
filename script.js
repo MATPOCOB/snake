@@ -165,7 +165,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       if (snake[0].y >= 13*cellSize && direction === 'down') {
         directionQueue = 'right'
       }
-      if (snake[0].x >= 14*cellSize && direction === 'right') {
+      if (snake[0].x >= 13*cellSize && direction === 'right') {
         directionQueue = 'up'
       }
       if (snake[0].y <= cellSize && direction === 'up') {
@@ -231,17 +231,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   function fullSnake() {
     snake = [];
-    for (let i = 0; i < 13; i++) {
+    for (let i = 0; i < 12; i++) {
       snake.push({x: (i+1) * cellSize, y: cellSize});
     }
     for (let i = 0; i < 13; i++) {
-      snake.push({x: 13 * cellSize+cellSize, y: (i+1)*cellSize});
+      snake.push({x: 12 * cellSize+cellSize, y: (i+1)*cellSize});
     }
-    for (let i = 12; i >= 0; i--) {
+    for (let i = 11; i >= 0; i--) {
       snake.push({x: (i+1) * cellSize, y: 13*cellSize});
     }
-    for (let i = 8; i >= 0; i--) {
-      snake.push({x: cellSize, y: (i+4)*cellSize});
+    for (let i = 10; i >= 0; i--) {
+      snake.push({x: cellSize, y: (i+2)*cellSize});
     }
     return snake;
   }
