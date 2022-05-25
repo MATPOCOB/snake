@@ -2,11 +2,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   setTimeout(() => {
     document.querySelector(".nokia").classList.add("nokia-fullscreen")
-  }, 2000)
-
-  setTimeout(() => {
-    document.querySelector(".canvas-container").classList.remove("d-none")
-  }, 3000)
+  }, 1000)
 
   var canvas = document.getElementById('canvas');
 
@@ -22,6 +18,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     foodColor = '#ff3636',
     foodX = [],
     foodY = [],
+    gameStared = false,
     food = {
       x: 0,
       y: 0
@@ -212,5 +209,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
-  newGame();
+  document.onkeydown = function (evt) {
+    if (evt.keyCode === 32 && !gameStared) {
+      gameStared = true
+      document.querySelector(".canvas-container").classList.remove("d-none");
+      newGame();
+    }
+  };
 })
