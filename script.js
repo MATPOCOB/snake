@@ -4,6 +4,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector(".nokia").classList.add("nokia-fullscreen")
   }, 1000)
 
+  setTimeout(() => {
+    document.querySelector(".hit-space").classList.remove("d-none")
+  }, 2000)
+
   var canvas = document.getElementById('canvas');
 
   var ctx = canvas.getContext('2d'),
