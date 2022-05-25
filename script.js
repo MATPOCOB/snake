@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }, 1000)
 
   setTimeout(() => {
-    document.querySelector("canvas").classList.remove("d-none")
+    document.querySelector(".canvas-container").classList.remove("d-none")
   }, 2500)
 
   var canvas = document.getElementById('canvas');
