@@ -22,7 +22,7 @@ body {
 .canvas-container {
   position: absolute;
   z-index: 1;
-  top: 205px;
+  top: 200px;
   left: 50%;
   transform: translateX(-42%);
   padding: 10px 14px 6px 10px;
