@@ -64,6 +64,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   // drawing food on the canvas
   function drawFood() {
+    if (demo) return;
+
     const foodImage = new Image();
     foodImage.src = './bug.svg';
 
