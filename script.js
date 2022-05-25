@@ -221,6 +221,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
       if (!gameStared) {
         gameStared = true
+        new Audio('./music.mp3').play();
         document.querySelector(".canvas-container").classList.remove("d-none");
         newGame();
         return
