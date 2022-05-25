@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     directionQueue = '',
     fps = 70,
     snake = [],
-    snakeLength = 5,
+    snakeLength = 9,
     cellSize = 20,
     snakeColor = '#3498db',
     foodColor = '#ff3636',
@@ -30,9 +30,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
   canvas.focus();
 
   // draws a square.. obviously
-  function drawSquare(x, y, color) {
+  function drawSquare(x, y, color, char) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, cellSize, cellSize);
+    ctx.font = '10px Arial';
+    ctx.fillStyle = 'white';
+    ctx.fillText(char, x+5, y+15);
   }
 
   // giving the food object its coordinates
@@ -84,10 +87,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
   }
 
+  const SNAKE_NAME = 'CODEBORNE';
+
   // loops through the snake array and draws each element
   function drawSnake() {
     for (i = 0; i < snake.length; i++) {
-      drawSquare(snake[i].x, snake[i].y, snakeColor);
+      let char = i < SNAKE_NAME.length ? SNAKE_NAME[i] : '';
+      drawSquare(snake[i].x, snake[i].y, snakeColor, char);
     }
   }
 
