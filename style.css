@@ -25,6 +25,7 @@ body {
   transform: translateX(-42%);
   padding: 10px 14px 6px 10px;
   background-color: #273122;
+  filter: blur(1px);
 }
 
 .canvas-container canvas {
