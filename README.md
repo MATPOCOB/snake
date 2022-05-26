@@ -1,3 +1,3 @@
 # Snake
 
-https://matpocob.github.io/snake/
+https://cbxp.github.io/snake/
